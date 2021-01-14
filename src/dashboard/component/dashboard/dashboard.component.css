@@ -1,0 +1,38 @@
+.dashboard-header{
+    padding: 10px 40px;
+}
+.saved-list{
+    background: #002b42;
+    color: white;
+    font-size: 13px;
+    padding: 10px 20px;
+}
+.details{
+    font-size: 12px;
+    cursor: pointer;
+}
+.description-lists{
+font-size: 14px;
+padding: 10px;
+margin-top: 20px;
+}
+
+.text-blue{
+    color: #628ca2;
+}
+.bg-gray{
+    background: #dad5d5;
+}
+.selectedList .details{
+    background: #fff;
+    border-bottom: 2px solid #628ca2;
+}
+.descriptions{
+    margin-top: 20px;
+}
+.actions-icons i{
+    padding-left: 10px;
+}
+.actions-list{
+    padding-right: 50px !important;
+}

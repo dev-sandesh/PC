@@ -1,0 +1,58 @@
+<div class="dashboard-wrapper">
+  <div class="dashboard">
+    <div class="row dashboard-header bg-gray m-0">
+      <div class="col-md-6">
+
+<button class="saved-list"> <i class="fa fa-list mx-1"></i>SAVED LISTS</button>
+      </div>
+      <div class="col-md-6">
+        <div class="search-item">
+          <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="searchText"
+            name="search"
+            placeholder="Search"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row m-0">
+      <div class="col-md-9">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>List Name</th>
+              <th class="text-right actions-list">No. of Entities</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let list of listDetails| search: 'name':searchText;let idx = index" [class] = "selectedList == idx ? 'bg-gray selectedList': ''">
+              <td>{{ list.date }}</td>
+              <td>
+                <b>{{ list.name }}</b>
+              </td>
+              <td class="text-right actions-list">{{ list.entitiesCount }}</td>
+              <td class="actions-icons"><i class="fa fa-share-alt"></i><i class="fa fa-pencil"></i><i class="fa fa-trash"></i></td>
+              <td>
+                <span class="details text-blue font-weight-bold" (click)="showDetails(idx)"
+                  >Details</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-3">
+        <div class="description-lists bg-gray"> No description yet. <span class="font-weight-bold text-blue">+ Add description</span></div>
+        <div *ngIf="selectedList !== undefined"  class= "descriptions">
+          <div *ngFor="let description of listDetails[selectedList].description">
+            <span class="text-blue font-weight-bold">{{ description }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
